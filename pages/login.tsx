@@ -1,4 +1,6 @@
-export function Login() {
+import { signIn } from "next-auth/react";
+
+function Login() {
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col justify-center sm:py-12">
       <div className="p-10 xs:p-0 mx-auto md:w-full md:max-w-md">
@@ -56,6 +58,7 @@ export function Login() {
               </button>
               <button
                 type="button"
+                onClick={() => signIn("github")}
                 className="transition duration-200 border border-gray-200 text-gray-500 w-full py-2.5 rounded-lg text-sm shadow-sm hover:shadow-md font-normal text-center inline-block"
               >
                 Github
@@ -132,3 +135,5 @@ export function Login() {
     </div>
   );
 }
+
+export default Login;
